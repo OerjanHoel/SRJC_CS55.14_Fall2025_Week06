@@ -29,7 +29,7 @@ export default function Post({ postData }) {
 // Gets teh staic paths for the blog posts 
 export async function getStaticPaths() {
   // Variable for the Post id's
-  const paths = getAllPostIds();
+  const paths = await getAllPostIds();
   return {
     // If the path is not found it won't fall back
     paths,

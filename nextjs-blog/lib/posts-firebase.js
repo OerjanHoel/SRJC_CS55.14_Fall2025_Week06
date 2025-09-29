@@ -1,6 +1,6 @@
 // Import the firebase app instance
 import { db } from './firebase'; // Import database from firebase.js
-import { collection, getDocs, query, documentId } from 'firebase/firestore'; // Imported from Firebase node package
+import { collection, getDocs, query, where, documentId } from 'firebase/firestore'; // Imported from Firebase node package
 
 export async function getSortedPostsData() {
     const myCollectionRef = collection(db, "posts");
@@ -25,13 +25,13 @@ export async function getAllPostIds() {
     const myCollectionRef = collection(db, "posts");
     const querySnapshot = await getDocs(myCollectionRef);
     const jsonObj = querySnapshot.docs.map(doc => ({ id: doc.id }));
-
+    console.log(jsonObj);
     return jsonObj.map(item => {
-        return {
-            params: {
-                id: item.id.toString()
-            }
-        }
+    return {
+         params: {
+            id: item.id.toString()
+         }
+      }
     });
 
 }
