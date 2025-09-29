@@ -1,5 +1,5 @@
 import Layout from '../../components/layout'; // Imports the layout from compnents folder
-import { getAllPostIds, getPostData } from '../../lib/posts-json'; // Imports the code we need from new file posts-json
+import { getAllPostIds, getPostData } from '../../lib/posts-firebase'; // Imports the code we need from new file posts-firebase
 import Head from 'next/head'; // Imports head from Next.js
 import Date from '../../components/date'; // Imports Date from the date module we installed
 import utilStyles from '../../styles/utils.module.css'; // Imports the CSS from utils.module.css file 
